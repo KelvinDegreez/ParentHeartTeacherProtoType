@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+
+    defaultConfig {
+        applicationId "com.kelvindegrez.parentheartteacher"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+
+    //Rx Java - Asynchronous Library
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'io.reactivex:rxandroid:1.2.1'
+
+    //Gson - Json Library
+    compile 'com.google.code.gson:gson:2.6.2'
+
+    //OkHttp - Http Library
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+
+    //Retrofit - Api Library
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+    //Mosby - MVP Library
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
+
+    //Testing Dependencies
+    testCompile 'junit:junit:4.12'
+    def espressoVersion = '2.2.2'
+    def testRunnerVersion = '0.5'
+    androidTestCompile "com.android.support.test:rules:${testRunnerVersion}"
+    androidTestCompile "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+    configurations.androidTestCompile.dependencies.each { androidTestCompileDependency ->
+        androidTestCompileDependency.exclude group: 'com.android.support'
+    }
+    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+}

@@ -38,3 +38,9 @@ captures/
 
 # Keystore files
 *.jks
+app/proguard-rules.pro
+gradle/
+gradlew
+gradlew.bat
+projectFilesBackup/
+.idea/
