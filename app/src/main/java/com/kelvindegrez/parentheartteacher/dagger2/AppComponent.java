@@ -1,7 +1,9 @@
 package com.kelvindegrez.parentheartteacher.dagger2;
 
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashModel;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashPresenter;
+import com.kelvindegrez.parentheartteacher.mvp.home.HomeModel;
+import com.kelvindegrez.parentheartteacher.mvp.home.HomePresenter;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashModel;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashPresenter;
 
 import javax.inject.Singleton;
 
@@ -16,5 +18,9 @@ public interface AppComponent {
     //==== SPLASH
     SplashPresenter provideSplashPresenter();
     SplashModel provideSplashModel();
+
+    //==== Home
+    HomePresenter provideHomePresenter();
+    HomeModel provideHomeModel();
 
 }

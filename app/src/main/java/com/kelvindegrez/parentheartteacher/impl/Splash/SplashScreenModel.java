@@ -1,20 +1,19 @@
-package com.kelvindegrez.parentheartteacher.impl.Splash;
+package com.kelvindegrez.parentheartteacher.impl.splash;
 
-import com.kelvindegrez.parentheartteacher.dagger2.MainApp;
 import com.kelvindegrez.parentheartteacher.mvp.Screen;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashModel;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashPresenter;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashModel;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashPresenter;
 
 public class SplashScreenModel implements SplashModel {
 
-    SplashPresenter presenter;
+    private SplashPresenter presenter;
 
-    public SplashScreenModel(){
+    public SplashScreenModel() {
     }
 
     @Override
     public Screen getNextScreen() {
-        return Screen.Splash;
+        return Screen.Home;
     }
 
     @Override

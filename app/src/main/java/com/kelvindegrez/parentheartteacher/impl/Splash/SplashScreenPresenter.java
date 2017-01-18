@@ -1,12 +1,10 @@
-package com.kelvindegrez.parentheartteacher.impl.Splash;
+package com.kelvindegrez.parentheartteacher.impl.splash;
 
-
-import android.widget.Toast;
 
 import com.kelvindegrez.parentheartteacher.dagger2.MainApp;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashModel;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashPresenter;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashView;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashModel;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashPresenter;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,10 +15,10 @@ import rx.schedulers.Schedulers;
 
 public class SplashScreenPresenter implements SplashPresenter {
 
-    SplashView view;
-    SplashModel model;
-    boolean isViewAttached = false;
-    int SPLASH_TIME_OUT = 3000;
+    private SplashView view;
+    private SplashModel model;
+    private boolean isViewAttached = false;
+    private int SPLASH_TIME_OUT = 3000;
 
     public SplashScreenPresenter() {
         attachModel(MainApp.getDaggerComponent().provideSplashModel());
@@ -56,7 +54,7 @@ public class SplashScreenPresenter implements SplashPresenter {
     }
 
     @Override
-    public void detachView(boolean retainInstance) {
+    public void detachView() {
         this.view = null;
         isViewAttached = false;
     }

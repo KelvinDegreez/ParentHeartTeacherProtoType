@@ -7,8 +7,8 @@ android {
 
     defaultConfig {
         applicationId "com.kelvindegrez.parentheartteacher"
-        minSdkVersion 16
-        targetSdkVersion 24
+        minSdkVersion 17
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -23,17 +23,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    //Rx Java - Asynchronous Library
-    
-
-    //Gson - Json Library
-    
-    //OkHttp - Http Library
-    
-    //Retrofit - Api Library
-    
-    //Mosby - MVP Library
-    
     //Testing Dependencies
     def espressoVersion = '2.2.2'
     def testRunnerVersion = '0.5'
@@ -42,40 +31,36 @@ dependencies {
     configurations.androidTestCompile.dependencies.each { androidTestCompileDependency ->
         androidTestCompileDependency.exclude group: 'com.android.support'
     }
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'io.reactivex:rxjava:1.1.6'
+
+
+
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'com.google.code.gson:gson:2.6.2'
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:support-core-utils:25.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
     compile 'com.hannesdorfmann.mosby:viewstate:2.0.1'
-    compile 'com.android.support:support-v4:25.1.0'
-    testCompile 'junit:junit:4.12'
-    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
-
-    //===== Dagger 2 Dependency Injection
-    apt 'com.google.dagger:dagger-compiler:2.7'
     compile 'com.google.dagger:dagger:2.7'
-    provided 'javax.annotation:jsr250-api:1.0'
-
-    //===== RxJava Asynchronous Event Bus
-    compile 'io.reactivex:rxandroid:1.2.1'
-
-    //===== ButterKnife View Binding
     compile 'com.jakewharton:butterknife:8.4.0'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
-
-    //===== Animation Library
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.easing:library:1.0.1@aar'
     compile 'com.daimajia.androidanimations:library:1.1.3@aar'
-
-    //===== Retrofit Rest API Library
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+    apt 'com.google.dagger:dagger-compiler:2.7'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    provided 'javax.annotation:jsr250-api:1.0'
 }

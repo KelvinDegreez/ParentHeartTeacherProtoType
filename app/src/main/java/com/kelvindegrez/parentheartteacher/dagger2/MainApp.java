@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 
-import com.kelvindegrez.parentheartteacher.impl.Splash.SplashScreenView;
+import com.kelvindegrez.parentheartteacher.impl.home.HomeScreenView;
+import com.kelvindegrez.parentheartteacher.impl.splash.SplashScreenView;
 import com.kelvindegrez.parentheartteacher.mvp.Screen;
 
 import java.util.HashMap;
@@ -39,6 +40,7 @@ public class MainApp extends Application {
     {
         ScreenClassMap = new HashMap<>();
         ScreenClassMap.put(Screen.Splash, SplashScreenView.class);
+        ScreenClassMap.put(Screen.Home, HomeScreenView.class);
 
     }
 

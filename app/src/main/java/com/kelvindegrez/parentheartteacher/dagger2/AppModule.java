@@ -1,9 +1,13 @@
 package com.kelvindegrez.parentheartteacher.dagger2;
 
-import com.kelvindegrez.parentheartteacher.impl.Splash.SplashScreenModel;
-import com.kelvindegrez.parentheartteacher.impl.Splash.SplashScreenPresenter;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashModel;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashPresenter;
+import com.kelvindegrez.parentheartteacher.impl.home.HomeScreenModel;
+import com.kelvindegrez.parentheartteacher.impl.home.HomeScreenPresenter;
+import com.kelvindegrez.parentheartteacher.impl.splash.SplashScreenModel;
+import com.kelvindegrez.parentheartteacher.impl.splash.SplashScreenPresenter;
+import com.kelvindegrez.parentheartteacher.mvp.home.HomeModel;
+import com.kelvindegrez.parentheartteacher.mvp.home.HomePresenter;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashModel;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashPresenter;
 
 import javax.inject.Singleton;
 
@@ -33,6 +37,17 @@ public class AppModule {
     @Provides @Singleton
     SplashModel providesSplashModel() {
         return new SplashScreenModel();
+    }
+
+    //===== Home
+    @Provides @Singleton
+    HomePresenter providesHomePresenter() {
+        return new HomeScreenPresenter();
+    }
+
+    @Provides @Singleton
+    HomeModel providesHomeModel() {
+        return new HomeScreenModel();
     }
 
 }

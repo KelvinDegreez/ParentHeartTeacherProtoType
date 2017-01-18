@@ -4,7 +4,7 @@ public interface MvpPresenter<V extends MvpView, M extends MvpModel> {
 
     void attachView(V view);
 
-    void detachView(boolean retainInstance);
+    void detachView();
 
     public boolean isViewAttached();
 

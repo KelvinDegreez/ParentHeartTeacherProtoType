@@ -1,4 +1,4 @@
-package com.kelvindegrez.parentheartteacher.impl.Splash;
+package com.kelvindegrez.parentheartteacher.impl.splash;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,15 +9,15 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.kelvindegrez.parentheartteacher.R;
 import com.kelvindegrez.parentheartteacher.dagger2.MainApp;
 import com.kelvindegrez.parentheartteacher.mvp.Screen;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashPresenter;
-import com.kelvindegrez.parentheartteacher.mvp.Splash.SplashView;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashPresenter;
+import com.kelvindegrez.parentheartteacher.mvp.splash.SplashView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SplashScreenView extends AppCompatActivity implements SplashView {
 
-    SplashPresenter presenter;
+    private SplashPresenter presenter;
 
     @BindView(R.id.splash_logo) ImageView splashLogo;
 
@@ -32,22 +32,22 @@ public class SplashScreenView extends AppCompatActivity implements SplashView {
 
     @Override
     public void navigateToScreen(Screen screen) {
-        YoYo.with(Techniques.RubberBand)
-                .duration(1000)
-                .playOn(splashLogo);
-        presenter.loadData();
+        MainApp.navigateToScreen(this, screen);
     }
 
     @Override
     protected void onStart() {
         presenter.attachView(this);
         presenter.loadData();
+        YoYo.with(Techniques.RubberBand)
+                .duration(1000)
+                .playOn(splashLogo);
         super.onStart();
     }
 
     @Override
     protected void onStop() {
-        presenter.detachView(false);
+        presenter.detachView();
         super.onStop();
     }
 

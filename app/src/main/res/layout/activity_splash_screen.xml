@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
-    tools:context="com.kelvindegrez.parentheartteacher.impl.Splash.SplashScreenView">
+    android:background="#00ccaa"
+    tools:context="com.kelvindegrez.parentheartteacher.impl.splash.SplashScreenView">
 
 
     <ImageView
