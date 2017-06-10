@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 
+import com.kelvindegrez.parentheartteacher.api.FakeDataGenerator;
 import com.kelvindegrez.parentheartteacher.impl.home.HomeScreenView;
 import com.kelvindegrez.parentheartteacher.impl.splash.SplashScreenView;
 import com.kelvindegrez.parentheartteacher.mvp.Screen;
@@ -43,5 +44,7 @@ public class MainApp extends Application {
         ScreenClassMap.put(Screen.Home, HomeScreenView.class);
 
     }
+
+    public static FakeDataGenerator fakeData = new FakeDataGenerator();
 
 }

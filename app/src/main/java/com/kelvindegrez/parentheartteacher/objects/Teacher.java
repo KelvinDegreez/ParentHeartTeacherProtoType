@@ -6,11 +6,13 @@ import java.util.Map;
 
 public class Teacher {
 
+    private String id;
     private String firstName;
     private String lastName;
     private int age;
     private String phoneNumber;
     private String email;
+    private double experience;
     private double sessionRate;
     private List<Subject> subjectExpertise;
     private Map<Rating, Integer> ratings;
@@ -21,11 +23,13 @@ public class Teacher {
     }
 
     public Teacher(
+            String id,
             String firstName,
             String lastName,
             int age,
             String phoneNumber,
             String email,
+            double yearsOfExperience
             double sessionRate,
             List<Subject> subjectExpertise,
             Map<Rating, Integer> ratings,
@@ -39,6 +43,14 @@ public class Teacher {
         this.subjectExpertise = subjectExpertise;
         this.ratings = ratings;
         this.reviews = reviews;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFirstName() {
